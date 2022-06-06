@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="./js/rotation.js"></script>
+    <script src="./js/fish.js"></script>
+    <script src="./js/treasure.js"></script>
+
+  </head>
+
+  <body>
+    <a-scene background="color:#026F90">
+
+      <a-entity id="look" look-controls camera position="0 2 20"></a-entity>
+
+      <!--Asset Management-->
+      <a-assets timeout="10000">        
+        <a-asset-item
+        id="diver"
+        src="./assets/scuba_driver/scene.gltf"
+        ></a-asset-item>
+        
+        <a-asset-item
+        id="treasure"
+        src="./assets/treasure/scene.gltf"
+        ></a-asset-item>
+        
+        <a-asset-item
+        id="island"
+        src="./assets/island/scene.gltf"
+        fish
+        ring
+        ></a-asset-item>
+        
+        <a-asset-item
+        id="turtle"
+        src="./assets/turtle/scene.gltf"
+        ></a-asset-item>
+        
+        <a-asset-item
+        id="fish"
+        src="./assets/fish/scene.gltf"
+        ></a-asset-item>
+        
+        </a-assets>        
+        
+      </a-assets>
+
+      <a-entity
+        id="treasure"
+        gltf-model="#treasure"
+        position="0 0 0"
+        scale="0.3 0.3 0.3"
+      >
+      </a-entity>
+
+      <a-entity
+        id="turtle"
+        gltf-model="#turtle"
+        position="0 0 15"
+        rotation = "0 90 0"
+        scale="1 1"
+      >
+      </a-entity>
+
+      <a-entity
+      id="diver"
+      gltf-model="#diver"
+      position="0 0 15"
+      rotation = "0 90 0"
+      scale="1 1"
+      diver-rotation-reader
+    >
+
+    <a-sphere
+          id="bubble"
+          position="50 120 -50"
+          radius="1"
+          color="#lightBlue"
+        ></a-sphere>
+
+    </a-entity>
+
+    <a-entity
+    id="island"
+    gltf-model="#island"
+    position="0 0 15"
+    rotation = "0 90 0"
+    scale="1 1"
+  >
+  </a-entity>
+
+  <a-entity
+  id="fish"
+  gltf-model="#fish"
+  position="0 0 15"
+  rotation = "0 90 0"
+  scale="1 1"
+>
+</a-entity>
+
+<a-entity
+camera="active: true"
+look-controls
+position="0 10 25"
+></a-entity>
+
+    </a-scene>
+  </body>
+</html>
